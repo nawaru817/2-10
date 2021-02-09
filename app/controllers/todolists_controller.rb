@@ -22,10 +22,18 @@ class TodolistsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
+  end
+
+  def update
+    list = List.find(params[:id])
+    list.update(list_params)
+    redirect_to todolist_path(list.id)
+  end
 
   private
   #ストロングパラメータ
   def list_params
     params.require(:list).permit(:title, :body)
   end
+
 end
