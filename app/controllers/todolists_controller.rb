@@ -32,7 +32,7 @@ class TodolistsController < ApplicationController
 
   def destroy
     list = List.find(params[:id]) #データ（レコード）を1件取得
-    list.destroy #データ（レコード）を削除
+    list.destroy #データ（レコード）を削除 2-7
     redirect_to todolists_path #投稿一覧画面へリダイレクト
   end
 
